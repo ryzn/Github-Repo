@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Index1";
+}
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Form_Submit').submit(function (e) {
+            var value = $('#basic-url').val();
+            alert(value);
+            //$.ajax({
+            //    type: 'POST',
+            //    url: '/values/',
+            //    data: param = value,
+            //    contentType: 'application/json; charset=utf-8',
+            //    dataType: 'json',
+            //    success: successFunc,
+            //    error: errorFunc
+            //});
+
+            //function successFunc(data, status) {
+            //    alert(data);
+            //}
+
+            //function errorFunc() {
+            //    alert('error');
+            //}
+        });
+        });
+
+
+</script>
+<h2>Index1</h2>
+
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+
+        <div>
+            <label >Long URL:</label>
+            <div >
+                <input type="text"  id="basic-url" />
+            </div>
+        </div>
+        @*<div class="form-group">
+                <label for="lblShortURL">Short URL</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Check me out
+                </label>
+            </div>*@
+        <button type="submit" id="Form_Submit">Submit</button>
+
+
+</div>
+

@@ -1,0 +1,63 @@
+﻿
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#my-form').submit(function (e) {
+            var value = $('#basic-url').val();
+            alert(value);
+            $.ajax({
+                type: 'POST',
+                url: '/api/Values',
+                data: param = JSON.stringify(value),
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
+                success: successFunc,
+                error: errorFunc
+            });
+
+            function successFunc(data, status) {
+                alert(data);
+            }
+
+            function errorFunc() {
+                alert('error');
+            }
+        });
+        });
+
+
+</script>
+
+
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+
+    <form id="my-form">
+        <div class="form-group">
+            <label for="basic-url">Long URL:</label>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </div>
+        @*<div class="form-group">
+            <label for="lblShortURL">Short URL</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check me out
+            </label>
+        </div>*@
+        <button type="submit" class="btn btn-default" id="Form_Submit">Submit</button>
+    </form>
+
+</div>
+
